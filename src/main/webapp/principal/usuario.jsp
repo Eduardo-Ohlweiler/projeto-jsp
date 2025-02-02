@@ -41,7 +41,10 @@
 												<div class="card">
 													<div class="card-block">
 														<h4 class="sub-title">Cadastro de usuario</h4>
-														<form action="<%= request.getContextPath() %>/ServletUsuarioController" method="post" >
+														
+														<form action="<%= request.getContextPath() %>/ServletUsuarioController" method="post" id="formUser" >
+														
+															<input type="hidden" name="acao" id="acao" value="" >
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">ID</label>
                                                                 <div class="col-sm-10">
@@ -74,7 +77,7 @@
                                                             </div>
 
                                                             
-                                                            <button class="btn btn-primary waves-effect waves-light">Novo</button>
+                                                            <button class="btn btn-primary waves-effect waves-light" onclick="limparForm()" >Novo</button>
 												            <button class="btn btn-success waves-effect waves-light">Salvar</button>
 												            <button class="btn btn-danger waves-effect waves-light">Excluir</button>
 
@@ -97,7 +100,18 @@
 	</div>
 
 	<jsp:include page="javascript-file.jsp"></jsp:include>
+	
+	<script type="text/javascript">
+		function limparForm() {
+		    let elementos = document.getElementById("formUser").elements;
+		    
+		    for (let p = 0; p < elementos.length; p++) { 
+		        elementos[p].value = '';
+		    }
+		}
+	</script>
 
+	
 </body>
 
 </html>
