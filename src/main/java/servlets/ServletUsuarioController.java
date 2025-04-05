@@ -27,9 +27,6 @@ public class ServletUsuarioController extends HttpServlet {
 		response.sendRedirect("principal/usuario.jsp");
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
 		try {
@@ -43,7 +40,7 @@ public class ServletUsuarioController extends HttpServlet {
 			String senha = request.getParameter("senha");
 			
 			ModelLogin modelLogin = new ModelLogin();
-			modelLogin.setId(id != null && !id.isEmpty() ? Long.parseLong(id) : null);
+			modelLogin.setId(id != null && !id.isEmpty() ? Long.parseLong(id) : null);//se tiver converte para long, se não tiver seta null
 			modelLogin.setNome(nome);
 			modelLogin.setEmail(email);
 			modelLogin.setLogin(login);
@@ -62,8 +59,9 @@ public class ServletUsuarioController extends HttpServlet {
 			}
 			
 			request.setAttribute("msg", msg);
-			request.setAttribute("modelLogin", modelLogin);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("principal/usuario.jsp");
+			request.setAttribute("modelLogin", modelLogin);//seta os valores de volta ao formulario pela tag value
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("principal/usuario.jsp");//redireciona de volta a tela após salvar
 			dispatcher.forward(request, response);
 			
 			

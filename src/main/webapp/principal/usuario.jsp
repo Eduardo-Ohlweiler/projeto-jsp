@@ -46,33 +46,38 @@
 														
 															<input type="hidden" name="acao" id="acao" value="" >
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">ID</label>
+                                                                <label class="col-sm-2 col-form-label">Cod.</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" name="id" id="id" class="form-control" readonly="readonly" style="width:10%" value="${modelLogin.id}">
+                                                                    <input type="text" name="id" id="id" class="form-control" 
+                                                                    		readonly="readonly" style="width:10%" value="${modelLogin.id}">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Nome</label>
+                                                                <label class="col-sm-2 col-form-label">Nome: (*)</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" name="nome" id="nome" class="form-control" required="required" style="width:80%" value="${modelLogin.nome}">
+                                                                    <input type="text" name="nome" id="nome" class="form-control" 
+                                                                    		required="required" style="width:60%" value="${modelLogin.nome}">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Email</label>
+                                                                <label class="col-sm-2 col-form-label">Email: (*)</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="email" name="email" id="email" class="form-control" required="required" autocomplete="off" style="width:80%" value="${modelLogin.email}">
+                                                                    <input type="email" name="email" id="email" class="form-control" 
+                                                                    		required="required" autocomplete="off" style="width:60%" value="${modelLogin.email}">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Login</label>
+                                                                <label class="col-sm-2 col-form-label">Login: (*)</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="text" name="login" id="login" class="form-control" required="required" style="width:80%" value="${modelLogin.login}">
+                                                                    <input type="text" name="login" id="login" class="form-control" 
+                                                                    		required="required" style="width:60%" value="${modelLogin.login}">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group row">
-                                                                <label class="col-sm-2 col-form-label">Senha</label>
+                                                                <label class="col-sm-2 col-form-label">Senha: (*)</label>
                                                                 <div class="col-sm-10">
-                                                                    <input type="password" name="senha" id="senha" class="form-control" required="required" autocomplete="off" style="width:80%" value="${modelLogin.senha}">
+                                                                    <input type="password" name="senha" id="senha" class="form-control" 
+                                                                    		required="required" autocomplete="off" style="width:60%" value="${modelLogin.senha}">
                                                                 </div>
                                                             </div>
 
