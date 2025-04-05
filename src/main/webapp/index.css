@@ -1,0 +1,101 @@
+/* Fundo e layout geral */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Poppins', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Título principal */
+h1 {
+  color: #3399ff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(51, 153, 255, 0.7);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Formulário */
+form {
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(51, 153, 255, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Labels */
+label {
+  color: #ffffff;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Inputs escuros com texto branco */
+.form-control {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+  border: 1px solid #3399ff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Quando o input está em foco */
+.form-control:focus {
+  background-color: #2a2a2a !important;
+  color: #ffffff !important;
+  border-color: #3399ff;
+  box-shadow: 0 0 5px #3399ff;
+}
+
+/* Placeholder */
+.form-control::placeholder {
+  color: #bbbbbb;
+}
+
+/* Botão */
+.btn-primary {
+  background-color: #1e90ff;
+  border: none;
+  transition: background-color 0.3s ease;
+  width: 80%;
+  margin: 20px auto 0;
+  display: block;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: #187bcd;
+}
+
+/* Mensagem de retorno */
+h4 {
+  margin-top: 15px;
+  color: #ff5555;
+  text-align: center;
+}
+
+.custom-alert {
+  background-color: #1e1e1e;
+  color: #ff6b6b;
+  border-left: 4px solid #ff6b6b;
+  padding: 15px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+  margin-top: 20px;
+  text-align: center;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
