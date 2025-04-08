@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import connection.SingleConnectionBanco;
 import models.ModelLogin;
@@ -53,7 +54,6 @@ public class DAOUsuarioRepository {
 		String sql = "select * from model_login where upper(login) = upper('"+ login +"')";
 		
 		PreparedStatement statement = connection.prepareStatement(sql);
-		
 		ResultSet resultado = statement.executeQuery();
 		
 		while(resultado.next()) {
@@ -72,9 +72,21 @@ public class DAOUsuarioRepository {
 		PreparedStatement statement = connection.prepareStatement(sql);
 		ResultSet resultado = statement.executeQuery();
 		
-		resultado.next();	
-		return resultado.getBoolean("existe");
+		if(resultado.next()) {
+			return resultado.getBoolean("existe");
+		}
+		return false;
 		
+	}
+	
+	public void deletarUser(String idUser) throws Exception {
+		String sql = "DELETE FROM model_login WHERE id = ?;";
+		PreparedStatement preparedSql = connection.prepareStatement(sql);
+		
+		preparedSql.setLong(1, Long.parseLong(idUser));
+		
+		preparedSql.executeUpdate();
+		connection.commit();
 	}
 	
 	
