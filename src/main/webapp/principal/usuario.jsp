@@ -85,7 +85,7 @@
                                                             
                                                             <button type="button" class="btn btn-primary waves-effect waves-light" onclick="limparForm()" >Novo</button>
 												            <button type="submit" class="btn btn-success waves-effect waves-light">Salvar</button>
-												            <button type="button" class="btn btn-danger waves-effect waves-light">Excluir</button>
+												            <button type="button" class="btn btn-danger waves-effect waves-light" onclick="criarDelete()">Excluir</button>
 
                                                         </form>
 													</div>
