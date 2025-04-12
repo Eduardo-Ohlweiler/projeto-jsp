@@ -85,8 +85,8 @@
                                                             
                                                             <button type="button" class="btn btn-primary waves-effect waves-light" onclick="limparForm()" >Novo</button>
 												            <button type="submit" class="btn btn-success waves-effect waves-light">Salvar</button>
-												            <button type="button" class="btn btn-danger waves-effect waves-light" onclick="criarDelete()">Excluir</button>
-
+															<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Excluir</button>
+															<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#pesquisarModal">Pesquisar</button>
                                                         </form>
 													</div>
 												</div>
@@ -107,12 +107,54 @@
 
 	<jsp:include page="javascript-file.jsp"></jsp:include>
 	
+	<!-- Modal Pesquisar-->
+	<div class="modal fade" id="pesquisarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Pesquisa de usuário</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	        ...
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!--Modal Deletar-->
+	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	       Deseja realmente excluir o usuario?
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+	        <button type="button" class="btn btn-danger" onclick="onDelete()">Sim</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
 	<script type="text/javascript">
 	
-		function criarDelete() {
-			document.getElementById("formUser").method  = 'get';
-			document.getElementById("acao").value		= 'deletar';
+		function onDelete(){
+
+			document.getElementById("formUser").method = 'get';
+			document.getElementById("acao").value = 'deletar';
 			document.getElementById("formUser").submit();
+			
 		}
 	
 		function limparForm() {
@@ -124,7 +166,6 @@
 		}
 	</script>
 
-	
 </body>
 
 </html>
